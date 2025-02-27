@@ -1,0 +1,52 @@
+/* 页面打印时的 A4 设置 */
+@page {
+    size A4;
+    padding: 0;
+    height: 100%; /* 让页面占满整个屏幕 */
+    overflow: hidden; /* 避免出现滚动条 */
+    background-color: #fdfefe;
+}
+
+body {
+    font-size: 16px;
+    margin: 2mm; /* 设置合适的页边距 */
+    line-height: 1.5;
+    background-color: #fdfefe;
+    color: #17202a;
+}
+
+body {
+    font-family: 'Source Han Serif', 'Songti SC', serif;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 33.33vh; /* 占据屏幕高度的三分之一 */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+h1 {
+    font-size: 60px;
+}
+
+img {
+    max-width: 100%; /* 图片宽度不超过容器宽度 */
+    max-height: 100%; /* 图片高度不超过容器高度 */
+    width: auto; /* 保持图片比例 */
+    height: auto; /* 保持图片比例 */
+    display: block; /* 防止图片下方出现空白 */
+    margin: 0 auto; /* 水平居中 */
+}
+
+time{
+    height: 150px;
+    margin-top: 50px; /* 上边距为 20 像素 */
+    font-size: 40px;
+}

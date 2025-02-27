@@ -1,0 +1,72 @@
+main:
+  cache_file_path: "tmp"
+  cache_file_name: ".cache.txt"
+  resources_path: "resources"
+  html_path: "html"
+  home_page_path: "home_page"
+  out_put_path: "output"
+  grouping_rules: "month"
+spider:
+  website_url: "https://fearnation.club/sitemap-posts.xml"
+  base_url: "https://fearnation.club"
+  crawl_deep: 1
+  download_retry_number: 3
+  need_filter_url:
+    - bei-di-hai-jian-day1-day2-san-tiao-xiang-jian-lai-bo-hai-an
+    - bei-di-hai-jian-day1-jin-ru-lu-cheng
+    - bei-di-hai-jian-day1-ru-shan-shan-xiu-gu
+    - cong-jin-tian-kai-shi-wo-men-shou-xi-de-shi-jie-jiang-jia-su-yuan-qu
+    - gei-fr_fnguan-zhong-guan-yu-zui-jin-zheng-yi-de-yi-feng-xin
+    - qi-yi-mo-cha-01-dou-yin-ren-ge-zai-zhong-guo-copy
+    - shen-shi-zhu-cha-shi-pin-jie-mu-hui-fu-geng-xin
+    - untitled
+
+clean:
+  main_info: "body > div.site > div > main"
+  img_info:
+    img_select:
+      - "main > article > header > figure > img"
+    img_local_path: "images"
+    clean_img_attr:
+      - "srcset"
+  need_filter_elements:
+    - "main > article > header > div > span.single-meta-item.single-meta-length"
+    - "main > article > div:nth-child(3)"
+    - "main > article > div > div.kg-card.kg-audio-card > div.kg-audio-player-container"
+    - "main > article > div > figure"
+    - "main > article > div.single-content.gh-content.gh-canvas > div.kg-card.kg-audio-card"
+  need_filter_ids:
+    - "透明茶室每日新闻分析节目"
+    - "你希望我在透明茶室讨论什么新闻"
+  need_filter_mark_info:
+    - p:
+        - "我们在X帐号每天早上上海时间8点进行新闻分析的直播。直播录音会在世界苦茶Podcast进行播放，也会在YouTube世界苦茶帐号播放。欢迎大家参与和收听。"
+        - "欢迎大家把世界苦茶推荐给你信任的朋友。"
+        - "欢迎你告诉我，兴许就会成为之后「透明茶室」的话题噢。"
+  need_cut_off_mark:
+    - "hr"
+
+save:
+  title_target: "head > title"
+  title_source: "body > main > article > header > h1"
+  page_module:
+    - style_name: "dark"
+      home_page_path: "home_page.html"
+      base_template_path: "base_template.html"
+      home_page_style_path:
+        - "styles_home_page_dark.css"
+      page_style_path:
+        - "styles_dark.css"
+      number_color: "1, 1, 1"
+    - style_name: "light"
+      home_page_path: "home_page.html"
+      base_template_path: "base_template.html"
+      home_page_style_path:
+        - "styles_home_page_light.css"
+      page_style_path:
+        - "styles_page_light.css"
+      number_color: "0, 0, 0"
+  select_module:
+    - "dark"
+    - "light"
+  home_page_content_element: "time"
