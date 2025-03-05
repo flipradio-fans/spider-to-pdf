@@ -3,9 +3,11 @@
 import fitz  # pymupdf
 
 from spider_to_pdf.save_page import StyleInfo
-
+import os
 
 def add_page_numbers_with_outline(input_pdf_path, out_pdf_path, style: StyleInfo):
+    if os.path.exists(out_pdf_path):
+        return
     doc = fitz.open(input_pdf_path)
     number_color = tuple(int(color_number) for color_number in style.number_color.split(","))
     for i in range(1, len(doc)):  # jump first page

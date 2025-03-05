@@ -128,5 +128,6 @@ From easy to hard
 - [ ] More page templates
 - [ ] More grouping rules
 - [ ] More general way to crawl data
+- [ ] Update the cache strategy so that the cache can decide whether to re-download the page and generate the PDF based on whether the page is updated.
 - [ ] Translate into other languages through large language models.
 - [ ] Export crawled data into a variety of customizable formats for use in other programs
